@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'students/index'
+  # get 'students/index'
   root 'courses#index'
 
   get 'about', to: 'pages#about'

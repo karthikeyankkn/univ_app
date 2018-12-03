@@ -1,0 +1,27 @@
+<div class="row mt-40">
+    <%= render 'shared/errors', obj:@student %>
+    <div class="card-panel center-align">
+      <h3 class="header"><%= @student.new_record? ? "Signup" : "Update Profile" %></h3>
+      <div class="row">
+        <%= form_for(@student, html: {class: "col s12"}) do |f| %>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.text_field :name, autofocus: true %>
+              <%= f.label :name %>
+              <!-- <input placeholder="Placeholder" id="first_name" type="text" class="validate"> -->
+              <!-- <label for="first_name">First Name</label> -->
+            </div>
+            <div class="input-field col s6">
+              <%= f.email_field :email %>
+              <%= f.label :email %>
+              <!-- <input id="email" type="email" class="validate">
+              <label for="email">Email</label> -->
+            </div>
+          </div>
+          <div class="row">
+            <%= f.submit( @student.new_record? ? "Signup" : "Update", class: "btn orange waves-effects waves-light") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
